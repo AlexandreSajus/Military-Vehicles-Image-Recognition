@@ -1,0 +1,25 @@
+<annotation>
+	<folder>my-project-name</folder>
+	<filename>Capture d’écran 2023-03-18 045941.png</filename>
+	<path>/my-project-name/Capture d’écran 2023-03-18 045941.png</path>
+	<source>
+		<database>Unspecified</database>
+	</source>
+	<size>
+		<width>1752</width>
+		<height>1286</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>marid</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1089</xmin>
+			<ymin>884</ymin>
+			<xmax>1189</xmax>
+			<ymax>944</ymax>
+		</bndbox>
+	</object>
+</annotation>
