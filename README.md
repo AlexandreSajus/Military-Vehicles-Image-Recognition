@@ -2,12 +2,13 @@
 
 Fine-Tuning YOLOv5 to detect Military Vehicles in Aerial ARMA 3 Imagery
 
+
 <p align="center">
-  <img src="media/compound.png" alt="Compound" width="70%"/>
+  <img src="media/compound.png" alt="Compound" width="80%"/>
 </p>
 
 <p align="center">
-  <img src="media/crossroad.png" alt="Crossroad" width="70%"/>
+  <img src="media/surveillance.gif" alt="Surveillance gif" width="80%"/>
 </p>
 
 Currently, the model is able to detect the following classes:
