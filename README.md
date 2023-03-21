@@ -38,7 +38,7 @@ pip install -r requirements.txt
 4. Run the model
 
 ```bash	
-python detect.py --source ./input/ --weights runs/train/yolo_road_det10/weights/best.pt --conf 0.25 --name yolo_road_det
+python detect.py --source ./input/ --weights runs/train/yolo_arma4/weights/best.pt --conf 0.5 --name yolo_arma
 ```
 
-5. The results will be available in the `runs/detect/yolo_road_det` folder
+5. The results will be available in a `runs/detect/yolo_armaX` folder
