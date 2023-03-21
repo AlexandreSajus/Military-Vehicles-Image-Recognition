@@ -3,10 +3,15 @@
 Fine-Tuning YOLOv5 to detect Military Vehicles in Aerial ARMA 3 Imagery
 
 <p align="center">
+  <img src="media/compound.png" alt="Compound" width="70%"/>
+</p>
+
+<p align="center">
   <img src="media/crossroad.png" alt="Crossroad" width="70%"/>
 </p>
 
 Currently, the model is able to detect the following classes:
+- CSAT Varsuk
 - CSAT Marid
 - CSAT Zamak (Transport)
 
