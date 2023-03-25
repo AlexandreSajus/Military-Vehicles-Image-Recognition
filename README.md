@@ -11,6 +11,14 @@ Fine-Tuning YOLOv5 to detect Military Vehicles in Aerial ARMA 3 Imagery
   <img src="media/surveillance.gif" alt="Surveillance gif" width="80%"/>
 </p>
 
+A Youtube devlog of the project is available here:
+<p align="center">
+  <a href="https://youtu.be/DKLcZ7jMpyU" target="_blank">
+    <img src="media/thumb.png" alt="Youtube Devlog" width="50%"/>
+  </a>
+</p>
+
+
 Currently, the model is able to detect the following classes:
 - CSAT Varsuk
 - CSAT Marid
