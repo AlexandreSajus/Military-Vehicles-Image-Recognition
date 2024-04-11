@@ -1,9 +1,8 @@
 train: ../images/train/
-val: ../images/val
-test: ../images/test/
+val: ../images/val/
 
 # number of classes
-nc: 2
+nc: 3
 
 # class names
-names: ["CSAT Marid", "CSAT Zamak (Transport)"]
+names: ["APC", "Logistics", "MBT"]

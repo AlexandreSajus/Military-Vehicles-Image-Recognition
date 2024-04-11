@@ -255,3 +255,10 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# Custom
+arma3_dataset/
+annotations/
+images/
+labels/
+user_data/
