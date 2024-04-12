@@ -11,19 +11,19 @@
 [DATA_NODE.output_path]
 
 [TASK.train]
-function = "__main__.launch_train:function"
+function = "algos.launch_train:function"
 inputs = [ "model_name:SECTION", "batch_size:SECTION",]
 outputs = [ "run_name:SECTION",]
 skippable = "False:bool"
 
 [TASK.get_results]
-function = "__main__.get_results:function"
+function = "algos.get_results:function"
 inputs = [ "run_name:SECTION",]
 outputs = [ "results:SECTION",]
 skippable = "False:bool"
 
 [TASK.infer]
-function = "__main__.run_inference:function"
+function = "algos.run_inference:function"
 inputs = [ "run_name:SECTION",]
 outputs = [ "output_path:SECTION",]
 skippable = "False:bool"

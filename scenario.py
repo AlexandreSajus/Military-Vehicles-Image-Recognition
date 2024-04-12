@@ -1,38 +1,7 @@
 import taipy as tp
 from taipy import Config, Core
-import pandas as pd
 
-import train, detect
-
-
-def launch_train(model_name: str = "yolov5s.pt", batch_size: int = 16):
-    name = "gd_v5"
-    model_size = model_name.split(".")[0].split("yolov5")[1]
-    run_name = f"{name}{model_size}_{str(batch_size)}"
-    train.run(
-        data="arma.yaml",
-        # Change to 50 in production
-        epochs=50,
-        weights=model_name,
-        batch_size=batch_size,
-        name=run_name,
-    )
-    return run_name
-
-
-def get_results(run_name: str):
-    results = pd.read_csv(f"runs/train/{run_name}/results.csv")
-    return results
-
-
-def run_inference(run_name: str):
-    detect.run(
-        source="./input/",
-        weights=f"runs/train/{run_name}/weights/best.pt",
-        conf_thres=0.5,
-        name=run_name,
-    )
-    return f"runs/detect/{run_name}"
+from algos import launch_train, get_results, run_inference
 
 
 def configure():
@@ -70,13 +39,15 @@ if __name__ == "__main__":
     core.run()
 
     model_name = "yolov5s.pt"
+    run_name = "test_gd_v5s_16"
     batch_size = 16
 
-    scenario = tp.create_scenario(
-        default_scenario_cfg, name=f"gd_v5_{model_name}_{batch_size}"
-    )
+    # Change name
+    scenario = tp.create_scenario(default_scenario_cfg, name=run_name)
     scenario.model_name.write(model_name)
     scenario.batch_size.write(batch_size)
     tp.submit(scenario)
-    print(scenario.results.read())
-    print(scenario.output_path.read())
+    # Better prints
+    print(f"Results: {scenario.results.read()}")
+    print(f"Output path: {scenario.output_path.read()}")
+    # Remove labels cache, user_data, .taipy, previous runs
