@@ -1,10 +1,12 @@
 import taipy as tp
 from taipy import Config, Core
+from taipy.gui import Gui
 
 from algos import launch_train, get_results, run_inference
 
 
 def configure():
+    Config.configure_job_executions(mode="cluster")
     model_name_cfg = Config.configure_data_node("model_name")
     batch_size_cfg = Config.configure_data_node("batch_size")
     run_name_cfg = Config.configure_data_node("run_name")
@@ -38,16 +40,17 @@ if __name__ == "__main__":
     default_scenario_cfg = configure()
     core.run()
 
-    model_name = "yolov5s.pt"
-    run_name = "test_gd_v5s_16"
-    batch_size = 16
+    for model_size in ["s", "m", "l"]:
+        model_name = f"yolov5{model_size}.pt"
+        run_name = f"YOLOv5{model_size}"
+        batch_size = 1
 
-    # Change name
-    scenario = tp.create_scenario(default_scenario_cfg, name=run_name)
-    scenario.model_name.write(model_name)
-    scenario.batch_size.write(batch_size)
-    tp.submit(scenario)
-    # Better prints
-    print(f"Results: {scenario.results.read()}")
-    print(f"Output path: {scenario.output_path.read()}")
+        scenario = tp.create_scenario(default_scenario_cfg, name=run_name)
+        scenario.model_name.write(model_name)
+        scenario.batch_size.write(batch_size)
+        tp.submit(scenario)
+        print(f"Results: {scenario.results.read()}")
+        print(f"Output path: {scenario.output_path.read()}")
+    Gui("").run()
+    # Before new batch of runs,
     # Remove labels cache, user_data, .taipy, previous runs

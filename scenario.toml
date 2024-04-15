@@ -1,5 +1,8 @@
 [TAIPY]
 
+[JOB]
+mode = "cluster"
+
 [DATA_NODE.model_name]
 
 [DATA_NODE.batch_size]
