@@ -1,0 +1,3 @@
+# Minimal dependencies for the standalone webcam demo.
+ultralytics>=8.2,<9
+opencv-python>=4.8
